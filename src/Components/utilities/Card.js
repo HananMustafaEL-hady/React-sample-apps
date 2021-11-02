@@ -16,6 +16,7 @@ const Card = (props) => {
     handleDelete,
     classSeemore,
     typecard,
+    postImg,
   } = props;
   return (
     <div className={classCard}>
@@ -33,8 +34,11 @@ const Card = (props) => {
         <div className="icon-delete">
           <i class="fas fa-trash-alt" onClick={() => handleDelete(id)}></i>
         </div>
-
-        <img src={postimg} className={classImg} />
+        {postImg?.length ? (
+          <img src={`data:image/png;base64,${postImg}`} className={classImg} />
+        ) : (
+          <img src={postimg} className={classImg} />
+        )}
       </div>
       <div className="card-bottom m1">
         {typecard == "allPosts" ? (

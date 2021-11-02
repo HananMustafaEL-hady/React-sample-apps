@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 
-const Navbar = (props) => {
+const Navbar = () => {
   return (
     <nav>
       <div class="container-nav">

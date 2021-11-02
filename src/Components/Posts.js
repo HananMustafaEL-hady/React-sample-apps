@@ -30,11 +30,12 @@ const Posts = ({ posts, handleDelete, handleClick }) => {
               author={posts && posts[posts.length - 1]?.author}
               content={posts && posts[posts.length - 1]?.content}
               id={posts && posts[posts.length - 1]?.id}
-              date={posts && posts[posts.length - 1]?.date}
+              date={posts && posts[posts.length - 1]?.createdAt}
               typecard="latest"
               classCard="card-row "
               classImg="img2"
               classCardTop="card-top  m-right"
+              postImg={posts && posts[posts.length - 1]?.img}
               classSeemore="last-item2 btn-see"
             />
             <Button
@@ -50,11 +51,11 @@ const Posts = ({ posts, handleDelete, handleClick }) => {
           <Button
             value="Add Post"
             type="button"
-            classStyle="last-item "
+            classStyle="last-item-add "
             handleMethod={handleClick}
           />
 
-          <div className=" grid-items">
+          <div className=" grid-items mt">
             {posts?.map((item, index) => {
               // console.log(item, index);
               return (
@@ -64,7 +65,8 @@ const Posts = ({ posts, handleDelete, handleClick }) => {
                   content={item.content}
                   id={item.id}
                   key={index}
-                  date={item.date}
+                  date={item.createdAt}
+                  postImg={item.img}
                   classCard="card flex-item-col"
                   classImg="img1"
                   classCardTop="card-top "
